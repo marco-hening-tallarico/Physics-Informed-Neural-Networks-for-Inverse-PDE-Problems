@@ -1,51 +1,156 @@
-# Physics-Informed-Neural-Networks-for-Inverse-PDE-Problems
-Code for publication: https://towardsdatascience.com/physics-informed-neural-networks-for-inverse-pde-problems/
+# Physics-Informed Neural Networks for Inverse PDE Problems
 
-Publications
-These are all my publications in chronological order. There are articles on pricing weather derivatives, reinforcement learning trading agents, loss terms in artificial intelligence, data leakage, combinatorial categorical grammar, 
-natural language processing, NASA’s climate data, physics-informed deep learning, stochastic differential equations, the Ornstein-Uhlenbeck process, p-value corrections, and detecting new super-heavy elements.
+A collection of Jupyter notebooks demonstrating Physics-Informed Neural Networks (PINNs) applied to inverse problems for partial differential equations (PDEs).  
+This repository focuses on notebook-based experiments, visualizations, and reproducible example pipelines for inferring unknown coefficients, source terms, or parameters of PDEs from data while enforcing physics constraints.
 
-References:
-Tallarico, M. H. (2025, December 24). Bonferroni vs. Benjamini-Hochberg: Choosing Your P-Value Correction: The time α = 10⁻⁹⁹ was too big: Superheavy elements and deceit. Towards Data Science. 
-https://towardsdatascience.com/the-time-10-99-was-too-big-superheavy-elements-and-deceit/
-https://scholar.google.com/citations?view_op=view_citation&hl=en&user=uCZbo_kAAAAJ&citation_for_view=uCZbo_kAAAAJ:W7OEmFMy1HYC
+Repository language composition: Jupyter Notebook (100%)
 
-Tallarico, M. H. (2025, September 3). Stochastic differential equations and temperature — NASA climate data pt. 2: The Ornstein–Uhlenbeck process in Python. Towards Data Science. 
-https://towardsdatascience.com/stochastic-differential-equations-and-temperature-nasa-climate-data-pt-2/
-https://scholar.google.com/citations?view_op=view_citation&hl=en&user=uCZbo_kAAAAJ&citation_for_view=uCZbo_kAAAAJ:Y0pCki6q_DkC
+---
 
-Tallarico, M. H. (2025, July 29). Physics-informed neural networks for inverse PDE problems: Solving the heat equation using DeepXDE. Towards Data Science. Link. Google Scholar.
-https://towardsdatascience.com/physics-informed-neural-networks-for-inverse-pde-problems/
-https://scholar.google.com/citations?view_op=view_citation&hl=en&user=uCZbo_kAAAAJ&citation_for_view=uCZbo_kAAAAJ:d1gkVwhDpl0C
+## Contents
 
-Tallarico, M. H. (2025, July 1). How to access NASA’s climate data — and how it’s powering the fight against climate change pt. 1: From architectural design to food security. Towards Data Science.
-https://towardsdatascience.com/how-to-access-nasas-climate-data-and-how-its-powering-the-fight-against-climate-change-pt-1/
-https://scholar.google.com/citations?view_op=view_citation&hl=en&user=uCZbo_kAAAAJ&citation_for_view=uCZbo_kAAAAJ:Tyk-4Ss8FVUC
+- notebooks/ (root)
+  - Example notebooks showing PINN formulations for 1D/2D inverse problems, data generation, training, and evaluation.
+- data/ (optional)
+  - Synthetic datasets or scripts to generate them.
+- environment.yml / requirements.txt (recommended)
+  - Specification of Python packages needed to run the notebooks.
+- LICENSE
+- README.md (this file)
 
-Tallarico, M. H. (2025, June 2). Grammar as an injectable: A Trojan horse to NLP: How machines make sense of sentence structure: Combinatory Categorial Grammar. Towards Data Science. Link. Google Scholar.
-https://towardsdatascience.com/grammar-as-a-trojan-horse-to-nlp-and-computer-science/
-https://scholar.google.com/citations?view_op=view_citation&hl=en&user=uCZbo_kAAAAJ&citation_for_view=uCZbo_kAAAAJ:zYLM7Y9cAGgC
+If your repo currently holds only notebooks, consider adding a `requirements.txt` or `environment.yml` and a small `scripts/` folder for programmatic reproducibility.
 
+---
 
-Tallarico, M. H. (2025, May 12). Will you spot the leaks? A data science challenge: When models fly too high: A perilous journey through data leakage. Towards Data Science. Link. Google Scholar.
-https://towardsdatascience.com/will-you-spot-the-leaks-a-data-science-challenge/
-https://scholar.google.com/citations?view_op=view_citation&hl=en&user=uCZbo_kAAAAJ&citation_for_view=uCZbo_kAAAAJ:IjCSPb-OGe4C
+## Quick start
 
-Tallarico, M. H. (2025, May 2). From a point to L∞: How AI uses distance: Artificial Intelligence and loss terms.Towards Data Science.
-https://towardsdatascience.com/from-a-point-to-l%e2%88%9e/
-https://scholar.google.com/citations?view_op=view_citation&hl=en&user=uCZbo_kAAAAJ&citation_for_view=uCZbo_kAAAAJ:qjMakFHDy7sC
+Choose one of the options below depending on how you prefer to run notebooks.
 
-Tallarico, M. H. (2025). Storm or signal: A trading agent showdown: Using Reinforcement Learning to Test Whether Weather Holds an Edge. AI Advances. Link. Google Scholar.
-https://ai.gopubby.com/storm-or-signal-a-trading-agent-showdown-5f3d662b2cef
-https://scholar.google.com/citations?view_op=view_citation&hl=en&user=uCZbo_kAAAAJ&citation_for_view=uCZbo_kAAAAJ:UeHWp8X0CEIC
+Run locally
+1. Create a virtual environment:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate   # macOS / Linux
+   venv\Scripts\activate      # Windows
+   ```
+2. Install dependencies (if a `requirements.txt` exists):
+   ```bash
+   pip install -r requirements.txt
+   ```
+   Or create a conda env:
+   ```bash
+   conda env create -f environment.yml
+   conda activate pinn-inverse
+   ```
+3. Launch Jupyter Lab / Notebook:
+   ```bash
+   jupyter lab
+   ```
+4. Open the notebooks and run cells interactively.
 
-Tallarico, M. H., & Olivares, P. (2024). Neural and Time-Series Approaches for Pricing Weather Derivatives: Performance and Regime Adaptation Using Satellite Data. arXiv. Link. Google Scholar.
-https://arxiv.org/abs/2411.12013
-https://scholar.google.com/citations?view_op=view_citation&hl=en&user=uCZbo_kAAAAJ&citation_for_view=uCZbo_kAAAAJ:eQOLeE2rZwMC
+Run on Google Colab
+- Open the notebook in GitHub and click “Open in Colab” (you can add Colab badges or links per notebook). If notebooks access data, provide public URLs or include small sample data in `data/`.
 
-Tallarico, M. H., & Olivares, P. (2024). Pricing Weather Derivatives: A Time Series Neural Network Approach. Preprint. Link. Google Scholar.
-https://arxiv.org/abs/2411.12013v1
-https://scholar.google.com/citations?view_op=view_citation&hl=en&user=uCZbo_kAAAAJ&citation_for_view=uCZbo_kAAAAJ:eQOLeE2rZwMC
+Run with Binder
+- Add a `requirements.txt` or `environment.yml` and a `postBuild` script to enable Binder launch:
+  - Binder badge:
+    ```
+    https://mybinder.org/v2/gh/<owner>/<repo>/HEAD
+    ```
 
-Tallarico, M. H. (2023). Modelling and forecasting temperature in Toronto using time-series and machine-learning methods. Academia.edu.
-https://scholar.google.com/citations?view_op=view_citation&hl=en&user=uCZbo_kAAAAJ&citation_for_view=uCZbo_kAAAAJ:eQOLeE2rZwMC
+Hardware
+- CPU is sufficient for small examples. For larger PINNs or faster experiments, use a machine with an NVIDIA GPU and configure the notebooks to use PyTorch/TensorFlow GPU devices.
+
+---
+
+## Notebooks overview (suggested)
+
+- inverse_1d.ipynb — 1D inverse problem: infer coefficient or source term from noisy observations.
+- inverse_2d.ipynb — 2D inverse example (conductivity, diffusion, etc.).
+- data_generation.ipynb — scripts for synthetic data generation and measurement noise models.
+- training_utils.ipynb — examples of network architectures, loss weighting strategies, and training loops.
+- evaluation_and_vis.ipynb — metrics, error analysis, and visualization of inferred fields.
+
+Add or update README sections in each notebook explaining purpose, inputs, expected runtime, and required cell order.
+
+---
+
+## Recommended dependencies
+
+Typical packages used in PINN notebooks:
+
+- Python 3.8+
+- numpy, scipy, matplotlib, pandas
+- JupyterLab / notebook
+- PyTorch (or TensorFlow) — pick one and document it
+- tqdm, seaborn, scikit-learn, yaml
+
+Example `requirements.txt` snippet:
+```text
+numpy
+scipy
+matplotlib
+pandas
+jupyterlab
+torch    # or tensorflow
+tqdm
+seaborn
+scikit-learn
+pyyaml
+```
+
+---
+
+## Reproducibility tips
+
+- Add seeds in notebooks for `numpy`, `random`, and `torch` (or `tf`) to make results repeatable.
+- Save training artifacts (checkpoints, figures) into an `experiments/` folder with a small manifest (config + git commit hash).
+- Keep one notebook that demonstrates end-to-end data → train → evaluate with a fixed small configuration that runs quickly on CPU.
+
+---
+
+## Suggestions for improving this repo
+
+- Add `requirements.txt` or `environment.yml` for easy environment setup.
+- Add a `notebooks/README.md` summarizing each notebook and recommended run order.
+- Provide a small sample dataset or a `data_generation.ipynb` so users can reproduce results offline.
+- Add a lightweight `src/` folder with reusable functions (data loaders, loss definitions, network builders) and import them from notebooks — this helps transition to scripted experiments.
+- Add CI checks (optional) that run the quick smoke notebook(s) via nbval or convert them to minimal pytest-compatible unit tests.
+
+---
+
+## Citation
+
+If you use these notebooks in research, please cite this repository:
+```
+@misc{marco-hening-tallarico-2026-pinn-inverse,
+  title = {Physics-Informed Neural Networks for Inverse PDE Problems},
+  author = {marco-hening-tallarico},
+  year = {2026},
+  howpublished = {GitHub repository},
+  note = {https://github.com/marco-hening-tallarico/Physics-Informed-Neural-Networks-for-Inverse-PDE-Problems}
+}
+```
+
+---
+
+## Contributing
+
+Contributions are welcome. Suggested workflow:
+1. Open an issue describing the feature, improvement, or bug.
+2. Create a branch named `feat/<short-name>` or `fix/<issue-number>`.
+3. Add tests or a smoke notebook showing the fix.
+4. Submit a pull request explaining changes and linking the issue.
+
+---
+
+## License
+
+Add an appropriate LICENSE file (e.g., MIT) to make reuse clear.
+
+---
+
+## Contact
+
+Maintainer: marco-hening-tallarico  
+Repository: https://github.com/marco-hening-tallarico/Physics-Informed-Neural-Networks-for-Inverse-PDE-Problems
