@@ -10,3 +10,5 @@ models/
 *.log
 .env
 .env.*
+node_modules/
+.venv/
